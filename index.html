@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hansler Tusevo – Développeur & Créateur de solutions digitales avec l'IA. Portfolio professionnel basé à Kinshasa." />
+  <meta name="author" content="Hansler Tusevo" />
+  <meta property="og:title" content="Hansler Tusevo | Développeur & Créateur IA" />
+  <meta property="og:description" content="Je transforme les idées en expériences digitales intelligentes." />
+  <meta property="og:image" content="hansler.png" />
+  <title>Hansler Tusevo | Développeur & Créateur IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════ LOADER ══════════ -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-code">
+        <span class="lc-line"><span class="lc-kw">const</span> <span class="lc-var">hansler</span> = <span class="lc-str">"Développeur IA"</span>;</span>
+        <span class="lc-line"><span class="lc-fn">build</span>(<span class="lc-var">hansler</span>).<span class="lc-fn">then</span>(() =&gt; <span class="lc-str">"🚀 Prêt"</span>);</span>
+      </div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderBar"></div></div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- ══════════ CURSOR ══════════ -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-blur" class="cursor-blur"></div>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">HT<span class="dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"    class="nav-link">À propos</a></li>
+        <li><a href="#skills"   class="nav-link">Compétences</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-nav">Collaborer</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section id="hero" class="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="hero-wrapper">
+      <!-- Left: Text -->
+      <div class="hero-text" data-aos="fade-right">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Disponible · Kinshasa &amp; International
+        </div>
+        <h1 class="hero-name">
+          <span class="name-first">Hansler</span>
+          <span class="name-last">Tusevo</span>
+        </h1>
+        <div class="hero-title-row">
+          <span id="typedText" class="typed-text"></span><span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc">
+          Je conçois des applications, des designs et des expériences digitales modernes
+          pour aider les entreprises à se développer et se démarquer en ligne.
+        </p>
+        <p class="hero-signature">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          Je transforme les idées en expériences digitales intelligentes.
+          <i class="fa-solid fa-quote-right quote-icon"></i>
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" id="cta-projects">
+            <span>Voir mes projets</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline" id="cta-contact">
+            <span>Me contacter</span>
+            <i class="fa-regular fa-paper-plane"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="7">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projets</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="5">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Années</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Photo -->
+      <div class="hero-photo-col" data-aos="fade-left" data-aos-delay="200">
+        <div class="photo-glow-ring"></div>
+        <div class="photo-frame">
+          <img src="hansler.png" alt="Hansler Tusevo – Développeur & Créateur IA" class="hero-photo" id="heroPhoto" />
+          <div class="photo-glass-overlay"></div>
+        </div>
+        <div class="photo-floating-card fc-1">
+          <i class="fa-solid fa-code"></i>
+          <span>Dev Full-Stack</span>
+        </div>
+        <div class="photo-floating-card fc-2">
+          <i class="fa-solid fa-brain"></i>
+          <span>IA & Automation</span>
+        </div>
+        <div class="photo-floating-card fc-3">
+          <i class="fa-solid fa-star gold"></i>
+          <span>Design Premium</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══════════ IMPACT BAR ══════════ -->
+  <section class="impact-bar">
+    <div class="container">
+      <div class="impact-grid" data-aos="fade-up">
+        <div class="impact-item">
+          <i class="fa-solid fa-rocket"></i>
+          <div>
+            <strong>+3 projets innovants</strong>
+            <span>Réalisés avec succès</span>
+          </div>
+        </div>
+        <div class="impact-sep"></div>
+        <div class="impact-item">
+          <i class="fa-solid fa-brain"></i>
+          <div>
+            <strong>Solutions basées sur l'IA</strong>
+            <span>Automatisation & intelligence</span>
+          </div>
+        </div>
+        <div class="impact-sep"></div>
+        <div class="impact-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <div>
+            <strong>Approche moderne</strong>
+            <span>Design & technologie de pointe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ ABOUT ══════════ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">À propos</span>
+        <h2 class="section-title">Qui suis-je ?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual" data-aos="fade-right">
+          <div class="about-photo-wrapper">
+            <img src="hansler.png" alt="Hansler Tusevo" class="about-photo" />
+            <div class="about-photo-border"></div>
+          </div>
+          <div class="about-tech-stack">
+            <span class="tech-pill"><i class="fa-brands fa-react"></i> React</span>
+            <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="tech-pill"><i class="fa-solid fa-brain"></i> IA</span>
+            <span class="tech-pill"><i class="fa-brands fa-figma"></i> Figma</span>
+            <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js</span>
+          </div>
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <p class="about-desc">
+            Je suis <strong>Hansler Tusevo</strong>, passionné par le développement, le design et
+            l'intelligence artificielle. Je crée des solutions digitales innovantes qui aident les
+            entreprises à améliorer leur présence en ligne et à augmenter leur impact.
+          </p>
+          <p class="about-desc">
+            Mon objectif est de combiner <span class="text-gold">technologie</span> et
+            <span class="text-gold">créativité</span> pour proposer des produits modernes,
+            efficaces et adaptés aux besoins actuels.
+          </p>
+          <div class="vision-box" data-aos="fade-up">
+            <div class="vision-icon"><i class="fa-solid fa-eye"></i></div>
+            <div>
+              <strong>Ma Vision</strong>
+              <p>"Créer des solutions digitales intelligentes qui transforment les idées en produits concrets et performants."</p>
+            </div>
+          </div>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="hl-icon"><i class="fa-solid fa-code"></i></div>
+              <div><strong>Développement Full-Stack</strong><p>Applications web & mobiles modernes</p></div>
+            </div>
+            <div class="highlight-item">
+              <div class="hl-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div><strong>Intelligence Artificielle</strong><p>Automatisation & solutions intelligentes</p></div>
+            </div>
+            <div class="highlight-item">
+              <div class="hl-icon"><i class="fa-solid fa-palette"></i></div>
+              <div><strong>Design & Branding</strong><p>Identité visuelle haut de gamme</p></div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary mt-2">
+            <span>Travaillons ensemble</span>
+            <i class="fa-solid fa-handshake"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SKILLS ══════════ -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Mes Compétences</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-icon-wrap dev"><i class="fa-solid fa-code"></i></div>
+          <h3>Développeur Web</h3>
+          <ul class="skill-list">
+            <li><i class="fa-solid fa-chevron-right"></i> Applications web et mobiles</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Solutions digitales sur mesure</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Intégration IA</li>
+          </ul>
+          <div class="sc-glow dev-g"></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-icon-wrap ai"><i class="fa-solid fa-brain"></i></div>
+          <h3>Intelligence Artificielle</h3>
+          <ul class="skill-list">
+            <li><i class="fa-solid fa-chevron-right"></i> Automatisation</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Génération de contenu</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Applications intelligentes</li>
+          </ul>
+          <div class="sc-glow ai-g"></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-icon-wrap ds"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3>Design</h3>
+          <ul class="skill-list">
+            <li><i class="fa-solid fa-chevron-right"></i> Portfolio professionnel</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Branding & identité visuelle</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Conception Graphique</li>
+          </ul>
+          <div class="sc-glow ds-g"></div>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-icon-wrap cm house"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>Community Manager</h3>
+          <ul class="skill-list">
+            <li><i class="fa-solid fa-chevron-right"></i> Gestion de communauté</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Création de contenus</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Comptes monétisables (FB, IG, TT, Pin)</li>
+          </ul>
+          <div class="sc-glow cm-g"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROJECTS ══════════ -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Projets Récents</h2>
+        <p class="section-sub">Des solutions innovantes conçues pour transformer votre présence digitale</p>
+      </div>
+      <div class="projects-grid">
+
+        <!-- P1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-mockup">
+            <div class="mockup-screen dnd-mockup">
+              <div class="mockup-bar"><span></span><span></span><span></span></div>
+              <div class="mockup-content">
+                <div class="mc-header">DND Store</div>
+                <div class="mc-grid">
+                  <div class="mc-card"></div><div class="mc-card"></div>
+                  <div class="mc-card"></div><div class="mc-card"></div>
+                </div>
+                <div class="mc-tag">MODE · LUXE · STYLE</div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <button class="btn-proj-view" onclick="openModal('modal1')">
+                <i class="fa-solid fa-expand"></i> Détails
+              </button>
+            </div>
+            <span class="proj-badge">E-Commerce</span>
+          </div>
+          <div class="project-info">
+            <h3>DND Store</h3>
+            <p>Portfolio e-commerce luxe pour une boutique de vêtements, perruques et accessoires avec un design haut de gamme.</p>
+            <div class="proj-techs">
+              <span>React</span><span>Node.js</span><span>Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P2 FEATURED -->
+        <div class="project-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-mockup">
+            <div class="mockup-screen ai-mockup">
+              <div class="mockup-bar"><span></span><span></span><span></span></div>
+              <div class="mockup-content">
+                <div class="mc-header ai-h">✨ Beauty AI</div>
+                <div class="mc-face">&#128247; Analyse IA</div>
+                <div class="mc-ai-dots">
+                  <div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>
+                </div>
+                <div class="mc-pill">Peau mixte · Sèche</div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <button class="btn-proj-view" onclick="openModal('modal2')">
+                <i class="fa-solid fa-expand"></i> Détails
+              </button>
+            </div>
+            <span class="proj-badge ai-badge">IA ✦</span>
+          </div>
+          <div class="project-info">
+            <h3>Application Beauté IA</h3>
+            <p>Application intelligente qui analyse le visage et propose des produits de beauté adaptés et des recommandations naturelles.</p>
+            <div class="proj-techs">
+              <span>Python</span><span>IA</span><span>Mobile</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-mockup">
+            <div class="mockup-screen school-mockup">
+              <div class="mockup-bar"><span></span><span></span><span></span></div>
+              <div class="mockup-content">
+                <div class="mc-header sch-h">🏫 EduPlatform</div>
+                <div class="mc-rows">
+                  <div class="mc-row"><div class="mcr-dot"></div><div class="mcr-line long"></div><div class="mcr-score">18/20</div></div>
+                  <div class="mc-row"><div class="mcr-dot"></div><div class="mcr-line mid"></div><div class="mcr-score">15/20</div></div>
+                  <div class="mc-row"><div class="mcr-dot"></div><div class="mcr-line long"></div><div class="mcr-score">17/20</div></div>
+                </div>
+                <div class="mc-pay">💳 Paiement Mobile</div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <button class="btn-proj-view" onclick="openModal('modal3')">
+                <i class="fa-solid fa-expand"></i> Détails
+              </button>
+            </div>
+            <span class="proj-badge edu-badge">Éducation</span>
+          </div>
+          <div class="project-info">
+            <h3>Camille Retake Hub</h3>
+            <p>Plateforme digitale de gestion académique (rattrapages) incluant suivi des étudiants, résultats et interfaces d'administration.</p>
+            <div class="proj-techs">
+              <span>React</span><span>Firebase</span><span>Mobile Pay</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MODALS ══════════ -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal1')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-hero dnd-grad">
+        <div class="modal-mockup-preview"><span>🛍️</span><strong>DND Store</strong></div>
+      </div>
+      <div class="modal-body">
+        <span class="modal-tag">E-Commerce · Design · Développement Web</span>
+        <h2>DND Store</h2>
+        <p>Création d'un portfolio e-commerce moderne et luxueux pour une boutique spécialisée dans les vêtements, perruques et accessoires. Interface haut de gamme, expérience utilisateur soignée et catalogue produit dynamique.</p>
+        <div class="modal-feats">
+          <div class="mf"><i class="fa-solid fa-check"></i> Design premium et luxueux</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Catalogue produits dynamique</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Interface responsive mobile & desktop</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Optimisation SEO & vitesse</div>
+        </div>
+        <div class="modal-techs"><span>React.js</span><span>Node.js</span><span>Figma</span><span>MongoDB</span></div>
+        <div class="modal-actions">
+          <a href="https://dnd-store-plum.vercel.app/" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-rocket"></i> Visiter le site
+          </a>
+          <a href="https://github.com/hanslertusevo-lab" target="_blank" class="btn btn-outline">
+            <i class="fa-brands fa-github"></i> Code Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal2')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-hero ai-grad">
+        <div class="modal-mockup-preview"><span>🧠</span><strong>Beauty AI</strong></div>
+      </div>
+      <div class="modal-body">
+        <span class="modal-tag">Intelligence Artificielle · Mobile · Beauté</span>
+        <h2>Application Beauté IA</h2>
+        <p>Application intelligente utilisant la vision par ordinateur pour analyser le type de peau et les traits du visage, puis proposer des produits de beauté personnalisés et des routines naturelles adaptées.</p>
+        <div class="modal-feats">
+          <div class="mf"><i class="fa-solid fa-check"></i> Analyse faciale par IA</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Recommandations personnalisées</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Base de données produits beauté</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Conseils naturels & bio</div>
+        </div>
+        <div class="modal-techs"><span>Python</span><span>TensorFlow</span><span>React Native</span><span>OpenCV</span></div>
+      </div>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal3')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-hero school-grad">
+        <div class="modal-mockup-preview"><span>🏫</span><strong>EduPlatform</strong></div>
+      </div>
+      <div class="modal-body">
+        <span class="modal-tag">Éducation · Gestion · FinTech</span>
+        <h2>Camille Retake Hub</h2>
+        <p>Plateforme dédiée à la gestion des rattrapages scolaires. Elle permet aux étudiants de suivre leurs résultats et aux administrateurs de gérer les sessions de reprise de manière fluide et transparente.</p>
+        <div class="modal-feats">
+          <div class="mf"><i class="fa-solid fa-check"></i> Gestion des rattrapages & sessions</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Consultation des résultats en temps réel</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Interface administrateur intuitive</div>
+          <div class="mf"><i class="fa-solid fa-check"></i> Système de notification automatique</div>
+        </div>
+        <div class="modal-techs"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
+        <div class="modal-actions">
+          <a href="https://github.com/hanslertusevo-lab/camille-retake-hub" target="_blank" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Voir sur GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ SERVICES ══════════ -->
+  <section id="services" class="services section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Offres</span>
+        <h2 class="section-title">Mes Services</h2>
+        <p class="section-sub">Des solutions complètes pour propulser votre présence digitale</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="svc-num">01</div>
+          <div class="svc-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3>Création de sites web</h3>
+          <p>Développement de solutions digitales sur mesure : Portfolios premium, Applications Web complexes et Applications Mobiles performantes.</p>
+          <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="svc-num">02</div>
+          <div class="svc-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>Workflow IA</h3>
+          <p>Optimisation de processus métiers via l'IA, automatisation intelligente et intégration de modèles de langage de pointe.</p>
+          <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="svc-num">03</div>
+          <div class="svc-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>Conception d'interfaces centrées utilisateur, prototypage interactif et création d'identités visuelles percutantes.</p>
+          <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="svc-num">04</div>
+          <div class="svc-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Stratégie Digitale</h3>
+          <p>Conseil stratégique, audit et solutions de croissance pour maximiser votre impact et votre visibilité en ligne.</p>
+          <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONVERSION SECTION ══════════ -->
+  <section class="conversion">
+    <div class="container">
+      <div class="conversion-card" data-aos="fade-up">
+        <div class="conv-orb conv-orb-1"></div>
+        <div class="conv-orb conv-orb-2"></div>
+        <div class="conv-content">
+          <span class="section-tag">Collaboration</span>
+          <h2>Vous avez un projet ?<br />Transformons-le en solution digitale.</h2>
+          <p>Je suis disponible pour de nouveaux projets, du freelance et des collaborations internationales.</p>
+          <div class="conv-actions">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Obtenir un site comme celui-ci</span>
+            </a>
+            <a href="#projects" class="btn btn-glass">
+              <span>Voir mes réalisations</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Travaillons Ensemble</h2>
+        <p class="section-sub">Vous avez un projet ? Je suis disponible pour en discuter.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <a href="https://wa.me/243990183020" class="contact-card" target="_blank" id="wa-card">
+            <div class="ci-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="ci-detail">
+              <small>WhatsApp</small>
+              <strong>+243 990 183 020</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ci-ext"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/?hl=fr#inbox" class="contact-card" target="_blank" id="email-card">
+            <div class="ci-icon mail"><i class="fa-solid fa-envelope"></i></div>
+            <div class="ci-detail">
+              <small>Gmail</small>
+              <strong>Envoyer un email</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ci-ext"></i>
+          </a>
+          <div class="contact-card" id="loc-card">
+            <div class="ci-icon loc"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="ci-detail">
+              <small>Localisation</small>
+              <strong>Kinshasa, RD Congo 🇨🇩</strong>
+            </div>
+          </div>
+          <div class="contact-avail">
+            <span class="avail-dot"></span>
+            Disponible pour du freelance &amp; projets internationaux
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/hanslertusevo-lab" target="_blank" aria-label="GitHub" class="cs-link"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn" class="cs-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="cs-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/papouche_noir/" target="_blank" aria-label="Instagram" class="cs-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/243990183020" target="_blank" aria-label="WhatsApp" class="cs-link"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-aos="fade-left" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="fname" placeholder="Votre nom" required />
+              <label for="fname">Nom</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="femail" placeholder="Email" required />
+              <label for="femail">Email</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="fsubject" placeholder="Sujet du projet" required />
+            <label for="fsubject">Sujet</label>
+          </div>
+          <div class="form-group">
+            <textarea id="fmessage" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+            <label for="fmessage">Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span>Envoyer le message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <div id="formSuccess" class="form-success hidden">
+            <i class="fa-solid fa-circle-check"></i> Merci ! Je vous répondrai très prochainement.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">HT<span class="dot">.</span></span>
+          <p>Développeur & Créateur de solutions digitales avec l'IA — Kinshasa, RDC</p>
+          <p class="footer-sig">"Je transforme les idées en expériences digitales intelligentes."</p>
+        </div>
+        <div class="footer-nav">
+          <div class="fn-col">
+            <strong>Navigation</strong>
+            <a href="#about">À propos</a>
+            <a href="#skills">Compétences</a>
+            <a href="#projects">Projets</a>
+          </div>
+          <div class="fn-col">
+            <strong>Services</strong>
+            <a href="#services">Portfolio web</a>
+            <a href="#services">Apps IA</a>
+            <a href="#services">Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Hansler Tusevo. Tous droits réservés.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/hanslertusevo-lab" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/papouche_noir/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/243990183020" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
