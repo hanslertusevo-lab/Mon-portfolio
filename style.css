@@ -124,82 +124,93 @@ body.modal-open {
 
 .loader-inner {
   text-align: center;
-}
-
-.loader-code {
   display: flex;
   flex-direction: column;
-  gap: .4rem;
-  margin-bottom: 2rem;
-  font-family: 'Courier New', monospace;
-  font-size: .85rem;
+  align-items: center;
+  gap: 0;
 }
 
-.lc-line {
-  display: block;
+/* Nom principal */
+.loader-name-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.loader-name-first {
+  font-family: var(--fontB);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--text);
   opacity: 0;
-  animation: fadeCodeLine .4s ease forwards;
+  transform: translateY(20px);
+  animation: loaderNameIn .6s cubic-bezier(.22,1,.36,1) .1s forwards;
 }
 
-.lc-line:nth-child(1) {
-  animation-delay: .2s;
+.loader-name-last {
+  font-family: var(--fontB);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: loaderNameIn .6s cubic-bezier(.22,1,.36,1) .3s forwards;
 }
 
-.lc-line:nth-child(2) {
-  animation-delay: .7s;
-}
-
-.lc-kw {
-  color: #c792ea;
-}
-
-.lc-var {
-  color: var(--gold);
-}
-
-.lc-str {
-  color: #c3e88d;
-}
-
-.lc-fn {
-  color: #82AAFF;
-}
-
-@keyframes fadeCodeLine {
+@keyframes loaderNameIn {
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* Tagline sous le nom */
+.loader-tagline {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  animation: fadeCodeLine .5s ease .7s forwards;
+  margin-bottom: 2.2rem;
+}
+
+@keyframes fadeCodeLine {
+  to { opacity: 1; }
+}
+
+/* Barre de progression */
 .loader-bar {
-  width: 220px;
+  width: 260px;
   height: 2px;
   background: var(--border);
   border-radius: 2px;
   overflow: hidden;
-  margin: 0 auto .8rem;
+  margin: 0 auto .9rem;
+  opacity: 0;
+  animation: fadeCodeLine .4s ease .6s forwards;
 }
 
 .loader-progress {
   height: 100%;
   background: linear-gradient(90deg, var(--gold-d), var(--gold), var(--gold-l));
-  animation: barFill 1.9s ease forwards;
+  width: 0;
+  transition: width .08s linear;
 }
 
-@keyframes barFill {
-  from {
-    width: 0
-  }
-
-  to {
-    width: 100%
-  }
-}
-
+/* Pourcentage */
 .loader-percent {
-  font-size: .75rem;
-  color: var(--text3);
-  letter-spacing: 2px;
+  font-family: var(--fontB);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: fadeCodeLine .4s ease .6s forwards;
 }
 
 /* ---- NAVBAR ---- */
