@@ -8,19 +8,22 @@
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   const pct = document.getElementById('loaderPercent');
+  const bar = document.getElementById('loaderBar');
   let p = 0;
   const iv = setInterval(() => {
-    p = Math.min(p + Math.random() * 12, 100);
-    if (pct) pct.textContent = Math.floor(p) + '%';
+    p = Math.min(p + Math.random() * 5, 100);
+    const val = Math.floor(p);
+    if (pct) pct.textContent = val + '%';
+    if (bar) bar.style.width = val + '%';
     if (p >= 100) clearInterval(iv);
-  }, 80);
+  }, 120);
 
   setTimeout(() => {
     if (loader) loader.classList.add('done');
     document.body.style.overflow = '';
     initAOS();
     typeLoop();
-  }, 2000);
+  }, 3200);
   document.body.style.overflow = 'hidden';
 });
 
