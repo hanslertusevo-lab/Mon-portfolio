@@ -339,3 +339,251 @@ if (photoFrame) {
 document.head.insertAdjacentHTML('beforeend',
   '<style>.nav-link.active{color:var(--text)!important}.nav-link.active::after{left:16px!important;right:16px!important;background:var(--gold)}</style>'
 );
+
+/* ════════════════════════════════════════
+   i18n – LANGUAGE SWITCHER (FR / EN)
+   ════════════════════════════════════════ */
+const translations = {
+  fr: {
+    // Navbar
+    'nav.about': 'À propos',
+    'nav.skills': 'Compétences',
+    'nav.projects': 'Projets',
+    'nav.services': 'Services',
+    'nav.contact': 'Contact',
+    'nav.cta': 'Collaborer',
+
+    // Hero
+    'hero.badge': 'Disponible · Kinshasa & International',
+    'hero.desc': 'Je conçois des applications, des designs et des expériences digitales modernes pour aider les entreprises à se développer et se démarquer en ligne.',
+    'hero.signature': 'Je transforme les idées en expériences digitales intelligentes.',
+    'hero.cta1': 'Voir mes projets',
+    'hero.cta2': 'Me contacter',
+    'hero.projects': 'Projets',
+    'hero.clients': 'Clients',
+    'hero.years': 'Années',
+
+    // Footer
+    'footer.copy': '© 2024 Hansler Tusevo. Tous droits réservés.',
+    'footer.nav': 'Navigation',
+    'footer.services': 'Services',
+  },
+  en: {
+    // Navbar
+    'nav.about': 'About',
+    'nav.skills': 'Skills',
+    'nav.projects': 'Projects',
+    'nav.services': 'Services',
+    'nav.contact': 'Contact',
+    'nav.cta': 'Collaborate',
+
+    // Hero
+    'hero.badge': 'Available · Kinshasa & International',
+    'hero.desc': 'I design modern applications, designs and digital experiences to help businesses grow and stand out online.',
+    'hero.signature': 'I turn ideas into intelligent digital experiences.',
+    'hero.cta1': 'View my projects',
+    'hero.cta2': 'Contact me',
+    'hero.projects': 'Projects',
+    'hero.clients': 'Clients',
+    'hero.years': 'Years',
+
+    // Footer
+    'footer.copy': '© 2024 Hansler Tusevo. All rights reserved.',
+    'footer.nav': 'Navigation',
+    'footer.services': 'Services',
+  }
+};
+
+// Dynamic content translated via DOM targeting
+const dynamicTranslations = {
+  fr: {
+    // Impact bar
+    '.impact-item:nth-child(1) strong': '+3 projets innovants',
+    '.impact-item:nth-child(1) span': 'Réalisés avec succès',
+    '.impact-item:nth-child(3) strong': 'Solutions basées sur l\'IA',
+    '.impact-item:nth-child(3) span': 'Automatisation & intelligence',
+    '.impact-item:nth-child(5) strong': 'Approche moderne',
+    '.impact-item:nth-child(5) span': 'Design & technologie de pointe',
+    // About
+    '.section-header .section-tag': 'À propos',
+    '#about .section-title': 'Qui suis-je ?',
+    '#about .about-desc:first-of-type': 'Je suis <strong>Hansler Tusevo</strong>, passionné par le développement, le design et l\'intelligence artificielle. Je crée des solutions digitales innovantes qui aident les entreprises à améliorer leur présence en ligne et à augmenter leur impact.',
+    // Skills section
+    '#skills .section-tag': 'Expertise',
+    '#skills .section-title': 'Mes Compétences',
+    '#skills .skill-card:nth-child(1) h3': 'Développeur Web',
+    '#skills .skill-card:nth-child(2) h3': 'Intelligence Artificielle',
+    '#skills .skill-card:nth-child(3) h3': 'Design',
+    '#skills .skill-card:nth-child(4) h3': 'Community Manager',
+    '#skills .cv-download-wrapper span': 'Télécharger mon CV',
+    // Projects
+    '#projects .section-tag': 'Portfolio',
+    '#projects .section-title': 'Projets Récents',
+    '#projects .section-sub': 'Des solutions innovantes conçues pour transformer votre présence digitale',
+    // Services
+    '#services .section-tag': 'Offres',
+    '#services .section-title': 'Mes Services',
+    '#services .section-sub': 'Des solutions complètes pour propulser votre présence digitale',
+    '#services .svc-card:nth-child(1) h3': 'Création de sites web',
+    '#services .svc-card:nth-child(2) h3': 'Workflow IA',
+    '#services .svc-card:nth-child(3) h3': 'UI/UX Design',
+    '#services .svc-card:nth-child(4) h3': 'Stratégie Digitale',
+    // Conversion
+    '.conversion h2': 'Vous avez un projet ?<br>Transformons-le en solution digitale.',
+    '.conversion p': 'Je suis disponible pour de nouveaux projets, du freelance et des collaborations internationales.',
+    '.conv-actions .btn-primary span': 'Obtenir un site comme celui-ci',
+    '.conv-actions .btn-glass span': 'Voir mes réalisations',
+    // Contact
+    '#contact .section-tag': 'Contact',
+    '#contact .section-title': 'Travaillons Ensemble',
+    '#contact .section-sub': 'Vous avez un projet ? Je suis disponible pour en discuter.',
+    '#fname[placeholder]': null,
+    '#femail[placeholder]': null,
+    '#fsubject[placeholder]': null,
+    '#fmessage[placeholder]': null,
+    '.contact-avail': 'Disponible pour du freelance & projets internationaux',
+    '#submitBtn span': 'Envoyer le message',
+    // Footer
+    '.footer-brand p:first-of-type': 'Développeur & Créateur de solutions digitales avec l\'IA — Kinshasa, RDC',
+    '.footer-sig': '"Je transforme les idées en expériences digitales intelligentes."',
+    '.fn-col:first-child strong': 'Navigation',
+    '.fn-col:first-child a:nth-child(2)': 'À propos',
+    '.fn-col:first-child a:nth-child(3)': 'Compétences',
+    '.fn-col:first-child a:nth-child(4)': 'Projets',
+    '.fn-col:last-child strong': 'Services',
+    '.fn-col:last-child a:nth-child(2)': 'Portfolio web',
+    '.fn-col:last-child a:nth-child(3)': 'Apps IA',
+    '.fn-col:last-child a:nth-child(4)': 'Design',
+  },
+  en: {
+    // Impact bar
+    '.impact-item:nth-child(1) strong': '+3 innovative projects',
+    '.impact-item:nth-child(1) span': 'Successfully completed',
+    '.impact-item:nth-child(3) strong': 'AI-powered solutions',
+    '.impact-item:nth-child(3) span': 'Automation & intelligence',
+    '.impact-item:nth-child(5) strong': 'Modern approach',
+    '.impact-item:nth-child(5) span': 'Cutting-edge design & technology',
+    // About
+    '#about .section-title': 'Who am I?',
+    '#about .about-desc:first-of-type': 'I am <strong>Hansler Tusevo</strong>, passionate about development, design and artificial intelligence. I create innovative digital solutions that help businesses improve their online presence and increase their impact.',
+    // Skills
+    '#skills .section-tag': 'Expertise',
+    '#skills .section-title': 'My Skills',
+    '#skills .skill-card:nth-child(1) h3': 'Web Developer',
+    '#skills .skill-card:nth-child(2) h3': 'Artificial Intelligence',
+    '#skills .skill-card:nth-child(3) h3': 'Design',
+    '#skills .skill-card:nth-child(4) h3': 'Community Manager',
+    '#skills .cv-download-wrapper span': 'Download my CV',
+    // Projects
+    '#projects .section-tag': 'Portfolio',
+    '#projects .section-title': 'Recent Projects',
+    '#projects .section-sub': 'Innovative solutions designed to transform your digital presence',
+    // Services
+    '#services .section-tag': 'Services',
+    '#services .section-title': 'My Services',
+    '#services .section-sub': 'Complete solutions to boost your digital presence',
+    '#services .svc-card:nth-child(1) h3': 'Website Creation',
+    '#services .svc-card:nth-child(2) h3': 'AI Workflow',
+    '#services .svc-card:nth-child(3) h3': 'UI/UX Design',
+    '#services .svc-card:nth-child(4) h3': 'Digital Strategy',
+    // Conversion
+    '.conversion h2': 'Got a project?<br>Let\'s turn it into a digital solution.',
+    '.conversion p': 'I am available for new projects, freelance work and international collaborations.',
+    '.conv-actions .btn-primary span': 'Get a site like this one',
+    '.conv-actions .btn-glass span': 'View my work',
+    // Contact
+    '#contact .section-tag': 'Contact',
+    '#contact .section-title': 'Let\'s Work Together',
+    '#contact .section-sub': 'Have a project? I\'m available to discuss it.',
+    '.contact-avail': 'Available for freelance & international projects',
+    '#submitBtn span': 'Send message',
+    // Footer
+    '.footer-brand p:first-of-type': 'Developer & Creator of digital solutions with AI — Kinshasa, DRC',
+    '.footer-sig': '"I turn ideas into intelligent digital experiences."',
+    '.fn-col:first-child strong': 'Navigation',
+    '.fn-col:first-child a:nth-child(2)': 'About',
+    '.fn-col:first-child a:nth-child(3)': 'Skills',
+    '.fn-col:first-child a:nth-child(4)': 'Projects',
+    '.fn-col:last-child strong': 'Services',
+    '.fn-col:last-child a:nth-child(2)': 'Web portfolio',
+    '.fn-col:last-child a:nth-child(3)': 'AI Apps',
+    '.fn-col:last-child a:nth-child(4)': 'Design',
+  }
+};
+
+// Placeholder translations
+const placeholders = {
+  fr: { fname: 'Votre nom', femail: 'Email', fsubject: 'Sujet du projet', fmessage: 'Décrivez votre projet...' },
+  en: { fname: 'Your name', femail: 'Email', fsubject: 'Project subject', fmessage: 'Describe your project...' }
+};
+
+// Typed phrases translations
+const typedPhrases = {
+  fr: ['Développeur Web', 'Workflow & Solutions IA', 'UI/UX Designer', 'Community Manager', 'Expert Web & Mobile'],
+  en: ['Web Developer', 'AI Workflow & Solutions', 'UI/UX Designer', 'Community Manager', 'Web & Mobile Expert']
+};
+
+let currentLang = localStorage.getItem('ht-lang') || 'fr';
+
+window.setLang = function (lang) {
+  currentLang = lang;
+  localStorage.setItem('ht-lang', lang);
+
+  // 1) Translate [data-i18n] elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // 2) Translate dynamic selectors
+  const map = dynamicTranslations[lang];
+  for (const selector in map) {
+    const val = map[selector];
+    if (!val) continue;
+    try {
+      document.querySelectorAll(selector).forEach(el => {
+        el.innerHTML = val;
+      });
+    } catch (e) { /* invalid selector, skip */ }
+  }
+
+  // 3) Translate placeholders
+  const ph = placeholders[lang];
+  Object.keys(ph).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = ph[id];
+  });
+
+  // 4) Update typed phrases
+  if (typedPhrases[lang]) {
+    phrases.length = 0;
+    typedPhrases[lang].forEach(p => phrases.push(p));
+  }
+
+  // 5) Update <html lang=""> attribute
+  document.documentElement.lang = lang;
+
+  // 6) Update all switcher buttons
+  ['btnFR', 'footerBtnFR'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', lang === 'fr');
+  });
+  ['btnEN', 'footerBtnEN'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', lang === 'en');
+  });
+
+  // 7) Smooth page-level fade
+  document.body.style.transition = 'opacity .25s ease';
+  document.body.style.opacity = '0.85';
+  setTimeout(() => { document.body.style.opacity = '1'; }, 250);
+};
+
+// Apply saved language on load (after loader finishes)
+const _origLoader = window.addEventListener;
+setTimeout(() => {
+  if (currentLang !== 'fr') setLang(currentLang);
+  else setLang('fr'); // init button states
+}, 3400);

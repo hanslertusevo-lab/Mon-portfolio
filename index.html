@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hansler Tusevo – Développeur & Créateur de solutions digitales avec l'IA. Portfolio professionnel basé à Kinshasa." />
+  <meta name="description"
+    content="Hansler Tusevo – Développeur & Créateur de solutions digitales avec l'IA. Portfolio professionnel basé à Kinshasa." />
   <meta name="author" content="Hansler Tusevo" />
   <meta property="og:title" content="Hansler Tusevo | Développeur & Créateur IA" />
   <meta property="og:description" content="Je transforme les idées en expériences digitales intelligentes." />
@@ -11,10 +13,13 @@
   <title>Hansler Tusevo | Développeur & Créateur IA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- ══════════ LOADER ══════════ -->
@@ -25,7 +30,9 @@
         <span class="loader-name-last">Tusevo</span>
       </div>
       <div class="loader-tagline">Développeur &amp; Créateur IA</div>
-      <div class="loader-bar"><div class="loader-progress" id="loaderBar"></div></div>
+      <div class="loader-bar">
+        <div class="loader-progress" id="loaderBar"></div>
+      </div>
       <div class="loader-percent" id="loaderPercent">0%</div>
     </div>
   </div>
@@ -39,13 +46,19 @@
     <div class="nav-container">
       <a href="#hero" class="nav-logo">HT<span class="dot">.</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about"    class="nav-link">À propos</a></li>
-        <li><a href="#skills"   class="nav-link">Compétences</a></li>
-        <li><a href="#projects" class="nav-link">Projets</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn btn-nav">Collaborer</a>
+      <!-- Language switcher in navbar -->
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#contact" class="btn btn-nav" data-i18n="nav.cta">Collaborer</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -65,7 +78,7 @@
       <div class="hero-text" data-aos="fade-right">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          Disponible · Kinshasa &amp; International
+          <span data-i18n="hero.badge">Disponible · Kinshasa &amp; International</span>
         </div>
         <h1 class="hero-name">
           <span class="name-first">Hansler</span>
@@ -74,39 +87,39 @@
         <div class="hero-title-row">
           <span id="typedText" class="typed-text"></span><span class="cursor-blink">|</span>
         </div>
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n="hero.desc">
           Je conçois des applications, des designs et des expériences digitales modernes
           pour aider les entreprises à se développer et se démarquer en ligne.
         </p>
         <p class="hero-signature">
           <i class="fa-solid fa-quote-left quote-icon"></i>
-          Je transforme les idées en expériences digitales intelligentes.
+          <span data-i18n="hero.signature">Je transforme les idées en expériences digitales intelligentes.</span>
           <i class="fa-solid fa-quote-right quote-icon"></i>
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary" id="cta-projects">
-            <span>Voir mes projets</span>
+            <span data-i18n="hero.cta1">Voir mes projets</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
           <a href="#contact" class="btn btn-outline" id="cta-contact">
-            <span>Me contacter</span>
+            <span data-i18n="hero.cta2">Me contacter</span>
             <i class="fa-regular fa-paper-plane"></i>
           </a>
         </div>
         <div class="hero-stats">
           <div class="stat">
             <span class="stat-num" data-count="7">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Projets</span>
+            <span class="stat-label" data-i18n="hero.projects">Projets</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-num" data-count="5">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Clients</span>
+            <span class="stat-label" data-i18n="hero.clients">Clients</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Années</span>
+            <span class="stat-label" data-i18n="hero.years">Années</span>
           </div>
         </div>
       </div>
@@ -206,21 +219,28 @@
             <div class="vision-icon"><i class="fa-solid fa-eye"></i></div>
             <div>
               <strong>Ma Vision</strong>
-              <p>"Créer des solutions digitales intelligentes qui transforment les idées en produits concrets et performants."</p>
+              <p>"Créer des solutions digitales intelligentes qui transforment les idées en produits concrets et
+                performants."</p>
             </div>
           </div>
           <div class="about-highlights">
             <div class="highlight-item">
               <div class="hl-icon"><i class="fa-solid fa-code"></i></div>
-              <div><strong>Développement Full-Stack</strong><p>Applications web & mobiles modernes</p></div>
+              <div><strong>Développement Full-Stack</strong>
+                <p>Applications web & mobiles modernes</p>
+              </div>
             </div>
             <div class="highlight-item">
               <div class="hl-icon"><i class="fa-solid fa-microchip"></i></div>
-              <div><strong>Intelligence Artificielle</strong><p>Automatisation & solutions intelligentes</p></div>
+              <div><strong>Intelligence Artificielle</strong>
+                <p>Automatisation & solutions intelligentes</p>
+              </div>
             </div>
             <div class="highlight-item">
               <div class="hl-icon"><i class="fa-solid fa-palette"></i></div>
-              <div><strong>Design & Branding</strong><p>Identité visuelle haut de gamme</p></div>
+              <div><strong>Design & Branding</strong>
+                <p>Identité visuelle haut de gamme</p>
+              </div>
             </div>
           </div>
           <a href="#contact" class="btn btn-primary mt-2">
@@ -281,6 +301,12 @@
           <div class="sc-glow cm-g"></div>
         </div>
       </div>
+      <div class="cv-download-wrapper" style="text-align: center; margin-top: 4rem;" data-aos="fade-up">
+        <a href="Hansler Tusevo Cv (1).pdf" download="Hansler_Tusevo_CV.pdf" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-download"></i>
+          <span>Télécharger mon CV</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -302,8 +328,10 @@
               <div class="mockup-content">
                 <div class="mc-header">DND Store</div>
                 <div class="mc-grid">
-                  <div class="mc-card"></div><div class="mc-card"></div>
-                  <div class="mc-card"></div><div class="mc-card"></div>
+                  <div class="mc-card"></div>
+                  <div class="mc-card"></div>
+                  <div class="mc-card"></div>
+                  <div class="mc-card"></div>
                 </div>
                 <div class="mc-tag">MODE · LUXE · STYLE</div>
               </div>
@@ -317,7 +345,8 @@
           </div>
           <div class="project-info">
             <h3>DND Store</h3>
-            <p>Portfolio e-commerce luxe pour une boutique de vêtements, perruques et accessoires avec un design haut de gamme.</p>
+            <p>Portfolio e-commerce luxe pour une boutique de vêtements, perruques et accessoires avec un design haut de
+              gamme.</p>
             <div class="proj-techs">
               <span>React</span><span>Node.js</span><span>Design</span>
             </div>
@@ -333,7 +362,9 @@
                 <div class="mc-header ai-h">✨ Beauty AI</div>
                 <div class="mc-face">&#128247; Analyse IA</div>
                 <div class="mc-ai-dots">
-                  <div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>
+                  <div class="ai-dot"></div>
+                  <div class="ai-dot"></div>
+                  <div class="ai-dot"></div>
                 </div>
                 <div class="mc-pill">Peau mixte · Sèche</div>
               </div>
@@ -347,7 +378,8 @@
           </div>
           <div class="project-info">
             <h3>Application Beauté IA</h3>
-            <p>Application intelligente qui analyse le visage et propose des produits de beauté adaptés et des recommandations naturelles.</p>
+            <p>Application intelligente qui analyse le visage et propose des produits de beauté adaptés et des
+              recommandations naturelles.</p>
             <div class="proj-techs">
               <span>Python</span><span>IA</span><span>Mobile</span>
             </div>
@@ -362,9 +394,21 @@
               <div class="mockup-content">
                 <div class="mc-header sch-h">🏫 EduPlatform</div>
                 <div class="mc-rows">
-                  <div class="mc-row"><div class="mcr-dot"></div><div class="mcr-line long"></div><div class="mcr-score">18/20</div></div>
-                  <div class="mc-row"><div class="mcr-dot"></div><div class="mcr-line mid"></div><div class="mcr-score">15/20</div></div>
-                  <div class="mc-row"><div class="mcr-dot"></div><div class="mcr-line long"></div><div class="mcr-score">17/20</div></div>
+                  <div class="mc-row">
+                    <div class="mcr-dot"></div>
+                    <div class="mcr-line long"></div>
+                    <div class="mcr-score">18/20</div>
+                  </div>
+                  <div class="mc-row">
+                    <div class="mcr-dot"></div>
+                    <div class="mcr-line mid"></div>
+                    <div class="mcr-score">15/20</div>
+                  </div>
+                  <div class="mc-row">
+                    <div class="mcr-dot"></div>
+                    <div class="mcr-line long"></div>
+                    <div class="mcr-score">17/20</div>
+                  </div>
                 </div>
                 <div class="mc-pay">💳 Paiement Mobile</div>
               </div>
@@ -378,7 +422,8 @@
           </div>
           <div class="project-info">
             <h3>Camille Retake Hub</h3>
-            <p>Plateforme digitale de gestion académique (rattrapages) incluant suivi des étudiants, résultats et interfaces d'administration.</p>
+            <p>Plateforme digitale de gestion académique (rattrapages) incluant suivi des étudiants, résultats et
+              interfaces d'administration.</p>
             <div class="proj-techs">
               <span>React</span><span>Firebase</span><span>Mobile Pay</span>
             </div>
@@ -399,7 +444,9 @@
       <div class="modal-body">
         <span class="modal-tag">E-Commerce · Design · Développement Web</span>
         <h2>DND Store</h2>
-        <p>Création d'un portfolio e-commerce moderne et luxueux pour une boutique spécialisée dans les vêtements, perruques et accessoires. Interface haut de gamme, expérience utilisateur soignée et catalogue produit dynamique.</p>
+        <p>Création d'un portfolio e-commerce moderne et luxueux pour une boutique spécialisée dans les vêtements,
+          perruques et accessoires. Interface haut de gamme, expérience utilisateur soignée et catalogue produit
+          dynamique.</p>
         <div class="modal-feats">
           <div class="mf"><i class="fa-solid fa-check"></i> Design premium et luxueux</div>
           <div class="mf"><i class="fa-solid fa-check"></i> Catalogue produits dynamique</div>
@@ -427,14 +474,16 @@
       <div class="modal-body">
         <span class="modal-tag">Intelligence Artificielle · Mobile · Beauté</span>
         <h2>Application Beauté IA</h2>
-        <p>Application intelligente utilisant la vision par ordinateur pour analyser le type de peau et les traits du visage, puis proposer des produits de beauté personnalisés et des routines naturelles adaptées.</p>
+        <p>Application intelligente utilisant la vision par ordinateur pour analyser le type de peau et les traits du
+          visage, puis proposer des produits de beauté personnalisés et des routines naturelles adaptées.</p>
         <div class="modal-feats">
           <div class="mf"><i class="fa-solid fa-check"></i> Analyse faciale par IA</div>
           <div class="mf"><i class="fa-solid fa-check"></i> Recommandations personnalisées</div>
           <div class="mf"><i class="fa-solid fa-check"></i> Base de données produits beauté</div>
           <div class="mf"><i class="fa-solid fa-check"></i> Conseils naturels & bio</div>
         </div>
-        <div class="modal-techs"><span>Python</span><span>TensorFlow</span><span>React Native</span><span>OpenCV</span></div>
+        <div class="modal-techs"><span>Python</span><span>TensorFlow</span><span>React Native</span><span>OpenCV</span>
+        </div>
       </div>
     </div>
   </div>
@@ -447,7 +496,8 @@
       <div class="modal-body">
         <span class="modal-tag">Éducation · Gestion · FinTech</span>
         <h2>Camille Retake Hub</h2>
-        <p>Plateforme dédiée à la gestion des rattrapages scolaires. Elle permet aux étudiants de suivre leurs résultats et aux administrateurs de gérer les sessions de reprise de manière fluide et transparente.</p>
+        <p>Plateforme dédiée à la gestion des rattrapages scolaires. Elle permet aux étudiants de suivre leurs résultats
+          et aux administrateurs de gérer les sessions de reprise de manière fluide et transparente.</p>
         <div class="modal-feats">
           <div class="mf"><i class="fa-solid fa-check"></i> Gestion des rattrapages & sessions</div>
           <div class="mf"><i class="fa-solid fa-check"></i> Consultation des résultats en temps réel</div>
@@ -477,28 +527,32 @@
           <div class="svc-num">01</div>
           <div class="svc-icon"><i class="fa-solid fa-globe"></i></div>
           <h3>Création de sites web</h3>
-          <p>Développement de solutions digitales sur mesure : Portfolios premium, Applications Web complexes et Applications Mobiles performantes.</p>
+          <p>Développement de solutions digitales sur mesure : Portfolios premium, Applications Web complexes et
+            Applications Mobiles performantes.</p>
           <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="svc-card" data-aos="fade-up" data-aos-delay="200">
           <div class="svc-num">02</div>
           <div class="svc-icon"><i class="fa-solid fa-robot"></i></div>
           <h3>Workflow IA</h3>
-          <p>Optimisation de processus métiers via l'IA, automatisation intelligente et intégration de modèles de langage de pointe.</p>
+          <p>Optimisation de processus métiers via l'IA, automatisation intelligente et intégration de modèles de
+            langage de pointe.</p>
           <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="svc-card" data-aos="fade-up" data-aos-delay="300">
           <div class="svc-num">03</div>
           <div class="svc-icon"><i class="fa-solid fa-palette"></i></div>
           <h3>UI/UX Design</h3>
-          <p>Conception d'interfaces centrées utilisateur, prototypage interactif et création d'identités visuelles percutantes.</p>
+          <p>Conception d'interfaces centrées utilisateur, prototypage interactif et création d'identités visuelles
+            percutantes.</p>
           <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="svc-card" data-aos="fade-up" data-aos-delay="400">
           <div class="svc-num">04</div>
           <div class="svc-icon"><i class="fa-solid fa-rocket"></i></div>
           <h3>Stratégie Digitale</h3>
-          <p>Conseil stratégique, audit et solutions de croissance pour maximiser votre impact et votre visibilité en ligne.</p>
+          <p>Conseil stratégique, audit et solutions de croissance pour maximiser votre impact et votre visibilité en
+            ligne.</p>
           <a href="#contact" class="svc-link">Demander <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
@@ -568,11 +622,16 @@
             Disponible pour du freelance &amp; projets internationaux
           </div>
           <div class="contact-socials">
-            <a href="https://github.com/hanslertusevo-lab" target="_blank" aria-label="GitHub" class="cs-link"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn" class="cs-link"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="cs-link"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/papouche_noir/" target="_blank" aria-label="Instagram" class="cs-link"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://wa.me/243990183020" target="_blank" aria-label="WhatsApp" class="cs-link"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://github.com/hanslertusevo-lab" target="_blank" aria-label="GitHub" class="cs-link"><i
+                class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn" class="cs-link"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="cs-link"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/papouche_noir/" target="_blank" aria-label="Instagram" class="cs-link"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/243990183020" target="_blank" aria-label="WhatsApp" class="cs-link"><i
+                class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -632,13 +691,25 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Hansler Tusevo. Tous droits réservés.</p>
+        <p data-i18n="footer.copy">© 2024 Hansler Tusevo. Tous droits réservés.</p>
+        <!-- Footer language switcher -->
+        <div class="footer-lang">
+          <i class="fa-solid fa-globe"></i>
+          <button class="footer-lang-btn" id="footerBtnFR" onclick="setLang('fr')">Français</button>
+          <span>/</span>
+          <button class="footer-lang-btn" id="footerBtnEN" onclick="setLang('en')">English</button>
+        </div>
         <div class="footer-socials">
-          <a href="https://github.com/hanslertusevo-lab" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/papouche_noir/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/243990183020" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://github.com/hanslertusevo-lab" target="_blank" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn"><i
+              class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/papouche_noir/" target="_blank" aria-label="Instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/243990183020" target="_blank" aria-label="WhatsApp"><i
+              class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -646,4 +717,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
